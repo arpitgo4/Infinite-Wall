@@ -1,0 +1,7 @@
+
+## third party dependencies
+node_modules/
+
+
+## debug logs
+npm-debug*
