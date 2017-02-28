@@ -5,3 +5,6 @@ node_modules/
 
 ## debug logs
 npm-debug*
+
+## build
+dist
