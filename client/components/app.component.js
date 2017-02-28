@@ -1,11 +1,18 @@
 
 import React from 'react';
+import Post from './post.component';
 
 class App extends React.Component {
 	render(){
-		<div>
-			<p>Infinite Wall!</p>
-		</div>
+		const style = {
+			backgroundColor: '#e6e6e6'
+		};
+
+		return (
+			<div style={style}>
+				<Post />
+			</div>
+		);
 	}
 }
 

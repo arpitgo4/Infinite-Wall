@@ -6,12 +6,14 @@
   "scripts": {
     "test": "npm test",
     "build": "webpack --progress --color",
-    "start:development": "npm run build && webpack --watch"
+    "start:development": "npm run build && webpack --watch",
+    "start": "webpack-dev-server"
   },
   "author": "Arpit Goyal <arpit.go4@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
