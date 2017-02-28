@@ -4,7 +4,9 @@
   "description": "Simple webapp with facebook like wall.",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "webpack --progress --color",
+    "start:development": "npm run build && webpack --watch"
   },
   "author": "Arpit Goyal <arpit.go4@gmail.com>",
   "license": "ISC",
