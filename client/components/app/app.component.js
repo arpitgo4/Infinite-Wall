@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '../header/header.component';
+import Post from '../post/post.component';
 
 import colors from '../colors.js';
 import fonts from '../fonts.js';
@@ -8,11 +9,10 @@ import fonts from '../fonts.js';
 class App extends React.Component {
 	render(){
 		const headerStyle = {
-			backgroundColor: colors.background,
-			paddingTop: '6px',
-			paddingLeft: '10px',
-			paddingRight: '10px',
-			paddingBottom: '6px'
+			paddingTop: '15px',
+			paddingLeft: '20px',
+			paddingRight: '20px',
+			paddingBottom: '15px'
 		};
 
 		const titleStyle = {
@@ -23,15 +23,37 @@ class App extends React.Component {
 			fontWeight: 'bold'
 		};
 
+		const titleContainer = {
+			backgroundColor: 'white'
+		};
+
 		const bodyStyle = {
 			fontFamily: fonts.linkFont
 		};
 
+		const contentStyle = {
+			backgroundColor: colors.background
+		};
+
+		const postStyle = {
+			paddingTop: '15px',
+			paddingLeft: '20px',
+			paddingRight: '20px',
+			paddingBottom: '15px'
+		};
+
 		return (
 			<div style={bodyStyle}> 
-				<p style={titleStyle}>the wall</p>
-				<div style={headerStyle}>
-					<Header />
+				<div style={titleContainer}>
+					<p style={titleStyle}>the wall</p>
+				</div>
+				<div style={contentStyle}>
+					<div style={headerStyle}>
+						<Header />
+					</div>
+					<div style={postStyle}>
+						<Post />
+					</div>
 				</div>				
 			</div>
 		);
