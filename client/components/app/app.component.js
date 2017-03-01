@@ -1,13 +1,13 @@
 
 import React from 'react';
-import Post from '../post/post.component';
+import Header from '../header/header.component';
 
 import colors from '../colors.js';
 import fonts from '../fonts.js';
 
 class App extends React.Component {
 	render(){
-		const postStyle = {
+		const headerStyle = {
 			backgroundColor: colors.background,
 			paddingTop: '6px',
 			paddingLeft: '10px',
@@ -30,8 +30,8 @@ class App extends React.Component {
 		return (
 			<div style={bodyStyle}> 
 				<p style={titleStyle}>the wall</p>
-				<div style={postStyle}>
-					<Post />
+				<div style={headerStyle}>
+					<Header />
 				</div>				
 			</div>
 		);
