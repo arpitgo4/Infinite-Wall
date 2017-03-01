@@ -1,12 +1,14 @@
-.header {
-	background-color: #fff;
-	padding: 10px;
+.main {
+	background-color: black;
 }
 
-.headers {
-	display: inline-block;
+.messageInputBox {
+	border: 0px;
+	font-weight: bold;
+	font-size: 1.3em;
+	width: 100%;
 }
 
-.verticalLine {
-	
+.messageInputBox:focus {
+	outline: 0px;   
 }

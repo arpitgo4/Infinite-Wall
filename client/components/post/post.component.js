@@ -4,7 +4,7 @@ import React from 'react';
 import pencilIcon from './assets/images/pencil.png';
 import imageIcon from './assets/images/image.png';
 
-import css from './assets/css/style.css';
+import './assets/css/style.css';
 import colors from '../colors.js';
 import fonts from '../fonts.js';
 
@@ -14,12 +14,12 @@ class Post extends React.Component {
 
 		const container = {
 			backgroundColor: '#fff',
-			padding: '10px',
+			padding: '20px',
 			outline: `2px solid ${colors.background}`
 		};
 
 		const subContainer = {
-
+			padding: 3
 		};
 
 		const headers = {
@@ -38,7 +38,8 @@ class Post extends React.Component {
 		};
 
 		const iconStyle = {
-			verticalAlign: 'middle'
+			verticalAlign: 'center',
+			marginRight: 7
 		};
 
 		const verticalSeperator = {
@@ -49,18 +50,22 @@ class Post extends React.Component {
 		};
 
 		const horizontalSeperator = {
-			width: '100%',
+			width: '99%',
+			marginLeft: 3,
+			marginRight: 2,
 			color: colors.background		
 		};
 
 		const messageBox = {
-			padding: 10,
+			padding: 7
 		};
 		const messageBoxInput = {
 			border: '0px',
 			fontWeight: 'bold',
-			fontSize: '1em'
-		};
+			fontSize: '1.3em',
+			height: 40,
+			width: '100%'
+		}
 
 		return (
 			<div style={container}>
@@ -77,10 +82,14 @@ class Post extends React.Component {
 				</div>
 				<hr style={horizontalSeperator}></hr>
 				<div style={messageBox}>
-					<input style={messageBoxInput} type="text" placeholder="What's on your mind?" ref="message" />
+					<input onClick={this.messageBoxClicked} className="messageInputBox"  type="text" placeholder="What's on your mind?" ref="message" />
 				</div>
 			</div>
 		);
+	}
+
+	messageBoxClicked(){
+		console.log();
 	}
 }
 

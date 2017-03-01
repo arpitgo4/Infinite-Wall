@@ -12,7 +12,7 @@ class App extends React.Component {
 			paddingTop: '6px',
 			paddingLeft: '10px',
 			paddingRight: '10px',
-			paddingBottom: '14px'
+			paddingBottom: '6px'
 		};
 
 		const titleStyle = {
@@ -32,7 +32,7 @@ class App extends React.Component {
 				<p style={titleStyle}>the wall</p>
 				<div style={postStyle}>
 					<Post />
-				</div>
+				</div>				
 			</div>
 		);
 	}
