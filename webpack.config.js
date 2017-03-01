@@ -20,8 +20,10 @@ const config = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.js?/, loaders: ['babel-loader'], include: path.join(__dirname, 'client') },
-			{ test: /\.html?/, include: CLIENT_BASE_DIR, loaders: ['html-loader'] }
+			{ test: /\.js?/, include: CLIENT_BASE_DIR, loaders: ['babel-loader'] },
+			{ test: /\.html?/, include: CLIENT_BASE_DIR, loaders: ['html-loader'] },
+			{ test: /\.png$/, include: CLIENT_BASE_DIR, loader: 'file-loader?name=/images/[name].[ext]' },
+			{ test: /\.css$/, include: CLIENT_BASE_DIR, loader: "style-loader!css-loader" }
 		] 
 	},
 	plugins: [
