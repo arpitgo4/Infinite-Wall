@@ -32,7 +32,7 @@ class App extends React.Component {
 		};
 
 		const contentStyle = {
-			backgroundColor: colors.background
+			backgroundColor: colors.background,
 		};
 
 		const postStyle = {
