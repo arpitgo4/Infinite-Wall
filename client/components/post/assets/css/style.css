@@ -1,0 +1,16 @@
+.footerLinks {
+	color: blue;
+	padding: 20px;
+}
+
+.footerLinks > p, .footerStats > p {
+	display: inline;
+}
+
+.footerLinks:hover {
+	cursor: hand;
+}
+
+.footerStats {
+	display: inline;
+}

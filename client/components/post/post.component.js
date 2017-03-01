@@ -6,6 +6,8 @@ import colors from '../colors.js';
 
 import titleIcon from './assets/images/title_icon.png';
 import globeIcon from './assets/images/earth-globe.png';
+import downArrowIcon from './assets/images/down-arrow.png';
+import postImage from './assets/images/post_image.png';
 
 export default class Post extends React.Component {
 
@@ -24,17 +26,49 @@ export default class Post extends React.Component {
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
 								<p style={stylesheet.title} >Title</p>
+								<img style={stylesheet.optionsIcon} src={downArrowIcon} />
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
 								<p style={stylesheet.titleTime} id="titleTime">13 hrs</p>
 								<p style={stylesheet.titleTime}>.</p>
 								<img style={stylesheet.globeIcon} src={globeIcon} id="globeIcon" />
 							</div>
-						</div>
-						<img id="optionsIcon" src="" />
+						</div>						
 					</div>
 					<div id="postHeadingContainer">
 						<p id="postHeading">Jar Jar is marked for death</p>
+					</div>
+				</div>
+				<div style={stylesheet.postDataContainer} id="postInfoContainer">
+					<div style={stylesheet.postInfoContainer} >
+						<img style={stylesheet.postImage} src={postImage} />
+						<div style={stylesheet.postMessageContainer} >
+							<p style={stylesheet.postMessageTitle}>
+								Swimming dog taken by shark at Sydney beach.
+							</p>
+							<p style={stylesheet.postMessageSummary}>
+								Swimmers and pet owners are being warned stay away from a south Sydney beach after a dog was taken by a shark while swimming off shore on the weekend.
+							</p>
+							<p style={stylesheet.postSource}>THEVERGE.COM</p>
+						</div>
+					</div>
+				</div>
+				<div style={stylesheet.footerContainer}>
+					<div className="footerLinks">
+						<p>Like</p>
+						<p>.</p>
+						<p>Comment</p>
+						<p>.</p>
+						<p>Share</p>
+						<p>.</p>
+						<div className="footerStats">
+							<img src="" />
+							<p>480</p>
+							<img src="" />
+							<p>20</p>
+							<img src="" />
+							<p>91</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -68,7 +102,13 @@ const stylesheet = {
 	},
 	title: {
 		color: 'blue',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		display: 'inline'
+	},
+	optionsIcon: {
+		float: 'right',
+		position: 'absolute',
+		right: 65
 	},
 	titleContainer: {
 	},
@@ -79,6 +119,35 @@ const stylesheet = {
 		display: 'inline'
 	},
 	globeIcon: {
+
+	},
+
+	postDataContainer: {
+		paddingLeft: 20,
+		paddingRight: 20
+	},
+	postInfoContainer: {
+		border: `2px solid ${colors.background}`,
+		overflow: 'wrap'
+	},
+	postImage: {
+
+	},
+	postMessageContainer: {
+
+	},
+	postMessageTitle: {
+		overflow: 'wrap'
+	},
+	postMessageSummary: {
+		overflow: 'wrap'
+	},
+	postSource: {
+
+	},
+
+
+	footerContainer: {
 
 	}
 };
