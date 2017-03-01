@@ -8,6 +8,9 @@ import titleIcon from './assets/images/title_icon.png';
 import globeIcon from './assets/images/earth-globe.png';
 import downArrowIcon from './assets/images/down-arrow.png';
 import postImage from './assets/images/post_image.png';
+import shareIcon from './assets/images/share.png';
+import likeIcon from './assets/images/like.png';
+import commentIcon from './assets/images/comment-bubble.png';
 
 export default class Post extends React.Component {
 
@@ -62,11 +65,11 @@ export default class Post extends React.Component {
 						<p>Share</p>
 						<p>.</p>
 						<div className="footerStats">
-							<img src="" />
+							<img src={likeIcon} />
 							<p>480</p>
-							<img src="" />
+							<img src={commentIcon} />
 							<p>20</p>
-							<img src="" />
+							<img src={shareIcon} />
 							<p>91</p>
 						</div>
 					</div>
