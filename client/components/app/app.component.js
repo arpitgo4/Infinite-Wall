@@ -12,9 +12,20 @@ class App extends React.Component {
 			paddingBottom: '14px'
 		};
 
+		const titleStyle = {
+			textAlign: 'center',
+			textTransform: 'uppercase',
+			fontFamily: 'sans-serif',
+			fontSize: '1.3em',
+			fontWeight: 'bold'
+		};
+
 		return (
-			<div style={postStyle}>
-				<Post />
+			<div>
+				<p style={titleStyle}>the wall</p>
+				<div style={postStyle}>
+					<Post />
+				</div>
 			</div>
 		);
 	}
