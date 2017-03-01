@@ -44,7 +44,7 @@ export default class Post extends React.Component {
 				</div>
 				<div style={stylesheet.postDataContainer} id="postInfoContainer">
 					<div style={stylesheet.postInfoContainer} >
-						<img style={stylesheet.postImage} src={postImage} />
+						<div style={stylesheet.postImage}></div>						
 						<div style={stylesheet.postMessageContainer} >
 							<p style={stylesheet.postMessageTitle}>
 								Swimming dog taken by shark at Sydney beach.
@@ -131,10 +131,16 @@ const stylesheet = {
 	},
 	postInfoContainer: {
 		border: `2px solid ${colors.background}`,
-		overflow: 'wrap'
+		overflow: 'wrap',
+		maxWidth: '100%',
+		objectFit: 'cover'
 	},
 	postImage: {
-
+		width: "100%",
+		height: 800,
+		backgroundImage: `url(${postImage})`,
+		backgroundSize: 'contain',
+		backgroundRepeat: 'no-repeat'
 	},
 	postMessageContainer: {
 

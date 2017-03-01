@@ -8,7 +8,7 @@
 }
 
 .footerLinks:hover {
-	cursor: hand;
+	cursor: pointer;
 }
 
 .footerStats {
