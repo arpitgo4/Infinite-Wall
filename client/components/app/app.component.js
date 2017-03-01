@@ -2,10 +2,13 @@
 import React from 'react';
 import Post from '../post/post.component';
 
+import colors from '../colors.js';
+import fonts from '../fonts.js';
+
 class App extends React.Component {
 	render(){
 		const postStyle = {
-			backgroundColor: '#e6e6e6',
+			backgroundColor: colors.background,
 			paddingTop: '6px',
 			paddingLeft: '10px',
 			paddingRight: '10px',
@@ -20,8 +23,12 @@ class App extends React.Component {
 			fontWeight: 'bold'
 		};
 
+		const bodyStyle = {
+			fontFamily: fonts.linkFont
+		};
+
 		return (
-			<div>
+			<div style={bodyStyle}> 
 				<p style={titleStyle}>the wall</p>
 				<div style={postStyle}>
 					<Post />

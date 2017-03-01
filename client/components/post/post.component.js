@@ -5,6 +5,8 @@ import pencilIcon from './assets/images/pencil.png';
 import imageIcon from './assets/images/image.png';
 
 import css from './assets/css/style.css';
+import colors from '../colors.js';
+import fonts from '../fonts.js';
 
 class Post extends React.Component {
 
@@ -13,7 +15,7 @@ class Post extends React.Component {
 		const container = {
 			backgroundColor: '#fff',
 			padding: '10px',
-			outline: '2px solid #e6e6e6'
+			outline: `2px solid ${colors.background}`
 		};
 
 		const subContainer = {
@@ -22,20 +24,33 @@ class Post extends React.Component {
 
 		const headers = {
 			display: 'inline-block',
-			padding: 5,
-			marginRight: 10
-		}
+			marginRight: 10,
+			updateStatus: {
+				color: colors.activeLink,
+				textDecoration: 'none',
+				fontWeight: 'bold'
+			},
+			addPhotos: {
+				color: colors.unactiveLink,
+				textDecoration: 'none',
+				fontWeight: 'bold'
+			}
+		};
+
+		const iconStyle = {
+			verticalAlign: 'middle'
+		};
 
 		const verticalSeperator = {
 			height: '100%',
 			width: 0,
-			//borderLeft: '10px solid black'
-			borderLeft: '1px solid #e6e6e6'
+			display: 'inline',			
+			borderLeft: `1px solid ${colors.background}`
 		};
 
 		const horizontalSeperator = {
 			width: '100%',
-			color: '#e6e6e6'		
+			color: colors.background		
 		};
 
 		const messageBox = {
@@ -50,14 +65,14 @@ class Post extends React.Component {
 		return (
 			<div style={container}>
 				<div style={subContainer}>
-					<div style={headers}>
-						<img src={pencilIcon} />
-						<strong>Update Status</strong>
+					<div style={Object.assign(headers)}>
+						<img style={iconStyle} src={pencilIcon} />
+						<a href="#" style={headers.updateStatus}>Update Status</a>
 					</div>
-					<div style={Object.assign(verticalSeperator, headers)} />
-					<div style={headers}>
-						<img src={imageIcon} />
-						<strong>Add Photos/Video</strong>
+					<div style={Object.assign(verticalSeperator, {marginRight: 10})} />
+					<div style={Object.assign(headers)}>
+						<img style={iconStyle} src={imageIcon} />
+						<a href="#" style={headers.addPhotos}>Add Photos/Video</a>
 					</div>
 				</div>
 				<hr style={horizontalSeperator}></hr>
