@@ -59,7 +59,8 @@ const stylesheet = {
 	title: {
 		color: 'blue',
 		fontWeight: 'bold',
-		display: 'inline'
+		display: 'inline',
+		fontSize: '1.5em'
 	},
 	optionsIcon: {
 		float: 'right',
@@ -72,7 +73,9 @@ const stylesheet = {
 		
 	},
 	titleTime: {
-		display: 'inline'
+		display: 'inline',
+		color: `${colors.bodyLinks}`,
+		fontWeight: 'bold'
 	},
 	globeIcon: {
 

@@ -5,13 +5,15 @@ import colors from '../../colors.js';
 
 import postImage from './assets/images/post_image.png';
 
+import css from './assets/css/style.css';
+
 export default class PostBody extends React.Component {
 	render(){
 		return (
-			<div style={stylesheet.postDataContainer} id="postInfoContainer">
+			<div style={stylesheet.postBodyContainer} id="postInfoContainer">
 					<div style={stylesheet.postInfoContainer} >
 						<div style={stylesheet.postImage}></div>						
-						<div style={stylesheet.postMessageContainer} >
+						<div id="postMessageContainer" style={stylesheet.postMessageContainer} >
 							<p style={stylesheet.postMessageTitle}>
 								Swimming dog taken by shark at Sydney beach.
 							</p>
@@ -27,7 +29,7 @@ export default class PostBody extends React.Component {
 }
 
 const stylesheet = {
-	postDataContainer: {
+	postBodyContainer: {
 		paddingLeft: 20,
 		paddingRight: 20
 	},
@@ -45,15 +47,20 @@ const stylesheet = {
 		backgroundRepeat: 'no-repeat'
 	},
 	postMessageContainer: {
-
+		margin: '0px 20px 20px 20px'
 	},
 	postMessageTitle: {
-		overflow: 'wrap'
+		textOverflow: 'ellipsis',
+		fontSize: '2em',
+		whiteSpace: 'nowrap',
+  		overflow: 'hidden'
 	},
 	postMessageSummary: {
-		overflow: 'wrap'
+		textOverflow: 'ellipsis',		
+  		whiteSpace: 'nowrap',
+  		overflow: 'hidden'
 	},
 	postSource: {
-
+		color: `${colors.bodyLinks}`
 	}
 };
