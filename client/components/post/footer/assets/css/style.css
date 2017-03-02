@@ -1,0 +1,22 @@
+.footerLinks {
+	color: blue;
+	padding: 20px;
+}
+
+.footerLinks > .dot {
+	text-align: top;
+	font-weight: 2em;
+	font-size: bold;
+}
+
+.footerLinks > p, .footerStats > p {
+	display: inline;
+}
+
+.footerLinks:hover {
+	cursor: pointer;
+}
+
+.footerStats {
+	display: inline;
+}
