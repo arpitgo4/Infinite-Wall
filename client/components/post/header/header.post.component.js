@@ -10,6 +10,7 @@ import downArrowIcon from './assets/images/down-arrow.png';
 export default class PostHeader extends React.Component {
 	render(){
 		return (
+		<div>
 			<div style={stylesheet.headerContainer} id="headerContainer">
 					<div id="header">
 						<div style={stylesheet.iconContainer} id="iconContainer">
@@ -26,11 +27,12 @@ export default class PostHeader extends React.Component {
 								<img style={stylesheet.globeIcon} src={globeIcon} id="globeIcon" />
 							</div>
 						</div>						
-					</div>
-					<div id="postHeadingContainer">
-						<p id="postHeading">Jar Jar is marked for death</p>
-					</div>
+					</div>					
 				</div>
+				<div style={stylesheet.postHeadingContainer} id="postHeadingContainer">
+						<p style={stylesheet.postHeading} id="postHeading">Jar Jar is marked for death</p>
+				</div>
+		</div>
 		);
 	}
 }
@@ -79,5 +81,11 @@ const stylesheet = {
 	},
 	globeIcon: {
 
+	},
+	postHeadingContainer: {
+		margin: '10px 0px 10px 25px'	
+	},
+	postHeading: {
+		
 	}
 };
