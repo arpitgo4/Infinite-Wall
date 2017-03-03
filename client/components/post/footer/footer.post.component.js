@@ -15,11 +15,11 @@ export default class PostFooter extends React.Component {
 		return (
 			<div style={stylesheet.footerContainer}>
 					<div className="footerLinks">
-						<p>Like</p>
+						<p onClick={this.likeClicked} >Like</p>
 						<p className="dot">.</p>
-						<p>Comment</p>
+						<p onClick={this.commentClicked} >Comment</p>
 						<p className="dot">.</p>
-						<p>Share</p>
+						<p onClick={this.shareClicked} >Share</p>
 						<p className='dot'>.</p>
 						<div className="footerStats">
 							<img src={likeIcon} />
@@ -30,8 +30,20 @@ export default class PostFooter extends React.Component {
 							<p>91</p>
 						</div>
 					</div>
-				</div>
+			</div>					
 		);
+	}
+
+	likeClicked() {
+		console.log('like clicked!');
+	}
+
+	commentClicked() {
+		console.log('comment clicked!');
+	}
+
+	shareClicked() {
+		console.log('share clicked!');
 	}
 }
 
