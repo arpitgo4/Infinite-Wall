@@ -19,7 +19,7 @@ export default class PostHeader extends React.Component {
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
 								<p style={stylesheet.title} >Title</p>
-								<img style={stylesheet.optionsIcon} src={downArrowIcon} />
+								<img onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
 								<p style={stylesheet.titleTime} id="titleTime">13 hrs</p>
@@ -31,9 +31,13 @@ export default class PostHeader extends React.Component {
 				</div>
 				<div style={stylesheet.postHeadingContainer} id="postHeadingContainer">
 						<p style={stylesheet.postHeading} id="postHeading">Jar Jar is marked for death</p>
-				</div>
+				</div>				
 		</div>
 		);
+	}
+
+	optionsClicked(){
+		console.log('this options needed!');
 	}
 }
 
