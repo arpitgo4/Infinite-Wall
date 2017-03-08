@@ -40,10 +40,11 @@ const stylesheet = {
 		objectFit: 'cover'
 	},
 	postImage: {
-		width: "100%",
-		height: 800,
+		maxWidth: "100%",
+		height: '580px',
+
 		backgroundImage: `url(${postImage})`,
-		backgroundSize: 'contain',
+		backgroundSize: '100% 100%',
 		backgroundRepeat: 'no-repeat'
 	},
 	postMessageContainer: {

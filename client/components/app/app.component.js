@@ -53,7 +53,7 @@ class App extends React.Component {
 					</div>
 					<div style={postStyle}>
 						<Post />
-					</div>
+					</div>					
 				</div>				
 			</div>
 		);
