@@ -4,13 +4,12 @@
 }
 
 .footerLinks > p, .footerLinks > div > p, .footerLinks > div > img {
-	margin-left: 4px;
+	margin-left: 3px;
 }
 
 .footerLinks > .dot {
-	text-align: top;
-	font-weight: 2em;
-	font-size: bold;
+	position: relative;
+	bottom: 5px;
 }
 
 .footerLinks > p, .footerStats > p {
