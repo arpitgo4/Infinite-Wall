@@ -23,8 +23,8 @@ export default class PostHeader extends React.Component {
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
 								<p style={stylesheet.titleTime} id="titleTime">13 hrs</p>
-								<p style={stylesheet.titleTime}>.</p>
-								<img style={stylesheet.globeIcon} src={globeIcon} id="globeIcon" />
+								&nbsp;<p style={stylesheet.titleDot}>.</p>
+								&nbsp;<img style={stylesheet.globeIcon} src={globeIcon} id="globeIcon" />
 							</div>
 						</div>						
 					</div>					
@@ -82,6 +82,13 @@ const stylesheet = {
 		display: 'inline',
 		color: `${colors.bodyLinks}`,
 		fontWeight: 'bold'
+	},
+	titleDot: {
+		display: 'inline',
+		color: `${colors.bodyLinks}`,
+		fontWeight: 'bold',
+		position: 'relative',
+		bottom: 5
 	},
 	globeIcon: {
 
