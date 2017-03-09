@@ -24,11 +24,13 @@ class App extends React.Component {
 		};
 
 		const titleContainer = {
-			backgroundColor: 'white'
+			backgroundColor: 'white'	
 		};
 
 		const bodyStyle = {
 			fontFamily: fonts.linkFont
+			/*width: '60%',     
+			marginLeft: '20%'*/
 		};
 
 		const contentStyle = {

@@ -3,6 +3,10 @@
 	padding: 20px;
 }
 
+.footerLinks > p, .footerLinks > div > p, .footerLinks > div > img {
+	margin-left: 4px;
+}
+
 .footerLinks > .dot {
 	text-align: top;
 	font-weight: 2em;

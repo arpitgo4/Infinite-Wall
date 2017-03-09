@@ -42,7 +42,6 @@ const stylesheet = {
 	postImage: {
 		maxWidth: "100%",
 		height: '580px',
-
 		backgroundImage: `url(${postImage})`,
 		backgroundSize: '100% 100%',
 		backgroundRepeat: 'no-repeat'
@@ -50,11 +49,8 @@ const stylesheet = {
 	postMessageContainer: {
 		margin: '0px 20px 20px 20px'
 	},
-	postMessageTitle: {
-		textOverflow: 'ellipsis',
-		fontSize: '2em',
-		whiteSpace: 'nowrap',
-  		overflow: 'hidden'
+	postMessageTitle: {		
+		fontSize: '2em'
 	},
 	postMessageSummary: {
 		textOverflow: 'ellipsis',		

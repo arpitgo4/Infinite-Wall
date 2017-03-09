@@ -22,7 +22,7 @@ export default class PostFooter extends React.Component {
 						<p onClick={this.shareClicked} >Share</p>
 						<p className='dot'>.</p>
 						<div className="footerStats">
-							<img src={likeIcon} />
+							<img src={likeIcon} />							
 							<p>480</p>
 							<img src={commentIcon} />
 							<p>20</p>
