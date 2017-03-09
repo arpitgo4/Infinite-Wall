@@ -18,7 +18,7 @@ export default class PostHeader extends React.Component {
 						</div>
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
-								<p style={stylesheet.title} >Title</p>
+								<p style={stylesheet.title} >The Verge</p>
 								<img onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
