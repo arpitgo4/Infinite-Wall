@@ -97,6 +97,7 @@ const stylesheet = {
 		margin: '10px 0px 10px 25px'	
 	},
 	postHeading: {
-		
+		fontSize: '1.2em',
+		marginBottom: 7
 	}
 };
