@@ -1,14 +1,27 @@
 import React from  'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'react-redux';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import { AppContainer } from 'react-hot-loader'; 
 import App from './components/app/app.component';
 
+import { reducers } from './reducers';
+
+const store = createStore(reducers);
+console.log('store --> ', store);
+store.dispatch({type: 'LIKE'});
+
+const app = (
+  <AppContainer>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </AppContainer>
+);
+
 ReactDOM.render(
-	<AppContainer>
-		<App />
-	</AppContainer>, 
+  app, 
 	document.getElementById('react-app')
 );
 
@@ -16,9 +29,7 @@ if (module.hot) {
    module.hot.accept('./components/app/app.component.js', () => {
      const App = require('./components/app/app.component.js').default;
      ReactDOM.render(
-     	<AppContainer>
-     		<App />
-     	</AppContainer>, 
+     	app, 
      	document.getElementById('react-app')
      );
    });

@@ -11,6 +11,7 @@ import commentIcon from './assets/images/comment-bubble.png';
 
 
 export default class PostFooter extends React.Component {
+
 	render(){
 		return (
 			<div style={stylesheet.footerContainer}>
