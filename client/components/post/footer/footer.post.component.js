@@ -14,12 +14,25 @@ export default class PostFooter extends React.Component {
 
 	constructor(){
 		super();
+		this.id = 'default';
+	}
 
+	componentWillMount(){
+		this.store = this.context.store;
+		this.store.subscribe(() => {
+			this.forceUpdate();
+		});
+	}
+
+	componentWillUnmount(){
+		this.store.unsubscribe();
 	}
 
 	render(){
-		this.store = this.context.store;
-		return (
+		console.log('redux store', this.store);
+		const post = this.store.getState().posts.find(post => post.id === this.id);
+		
+		return (	
 			<div style={stylesheet.footerContainer}>
 					<div className="footerLinks">
 						<p onClick={() => this.likeClicked()} >Like</p>
@@ -30,11 +43,11 @@ export default class PostFooter extends React.Component {
 						<p className='dot'>.</p>
 						<div className="footerStats">
 							<img src={likeIcon} />							
-							<p>480</p>
+							<p>{post.likes}</p>
 							<img src={commentIcon} />
-							<p>20</p>
+							<p>{post.comments}</p>
 							<img src={shareIcon} />
-							<p>91</p>
+							<p>{post.shares}</p>
 						</div>
 					</div>
 			</div>					

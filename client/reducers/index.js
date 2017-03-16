@@ -23,7 +23,8 @@ const reducers = (state = defaultState, action) => {
 			return post;
 		});
 
-		return console.log(Object.assign(state, { posts }));
+
+		return Object.assign(state, { posts });
 			
 		case 'COMMENT_CLICKED' : 
 		posts = state.posts.map((post) => {
@@ -34,7 +35,7 @@ const reducers = (state = defaultState, action) => {
 			return post;
 		});
 
-		return console.log(Object.assign(state, { posts }));
+		return Object.assign(state, { posts });
 
 		case 'SHARE_CLICKED' : 
 		posts = state.posts.map((post) => {
@@ -45,7 +46,7 @@ const reducers = (state = defaultState, action) => {
 			return post;
 		});
 
-		return console.log(Object.assign(state, { posts }));
+		return Object.assign(state, { posts });
 
 		default: return state;
 	}
