@@ -8,25 +8,47 @@ import postImage from './assets/images/post_image.png';
 import css from './assets/css/style.css';
 
 export default class PostBody extends React.Component {
+
+	constructor(props){
+		super(props);
+		this.id = props.id || 'default';
+	}	
+
+	componentWillMount(){
+		this.store = this.context.store;
+		this.store.subscribe(() => this.forceUpdate());
+	}
+
+	componentWillUnmount(){
+		this.store.unsubscribe();
+	}
+
 	render(){
+
+		const post = this.store.getState().posts.find(post => post.id === this.id);
+
 		return (
 			<div style={stylesheet.postBodyContainer} id="postInfoContainer">
 					<div style={stylesheet.postInfoContainer} >
-						<div style={stylesheet.postImage}></div>						
+						<div style={Object.assign(stylesheet.postImage, { backgroundImage: `url(${post.image})` })}></div>						
 						<div id="postMessageContainer" style={stylesheet.postMessageContainer} >
 							<p style={stylesheet.postMessageTitle}>
-								Swimming dog taken by shark at Sydney beach.
+								{post.summaryTitle}
 							</p>
 							<p style={stylesheet.postMessageSummary}>
-								Swimmers and pet owners are being warned stay away from a south Sydney beach after a dog was taken by a shark while swimming off shore on the weekend.
+								{post.summary}
 							</p>
-							<p style={stylesheet.postSource}>THEVERGE.COM</p>
+							<p style={stylesheet.postSource}>{post.source}</p>
 						</div>
 					</div>
 				</div>
 		);
 	}
 }
+
+PostBody.contextTypes = {
+	store: React.PropTypes.object
+};
 
 const stylesheet = {
 	postBodyContainer: {
@@ -58,6 +80,7 @@ const stylesheet = {
   		overflow: 'hidden'
 	},
 	postSource: {
-		color: `${colors.bodyLinks}`
+		color: `${colors.bodyLinks}`,
+		textTransform: 'uppercase'
 	}
 };

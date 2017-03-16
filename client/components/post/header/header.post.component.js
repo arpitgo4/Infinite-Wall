@@ -8,7 +8,25 @@ import globeIcon from './assets/images/earth-globe.png';
 import downArrowIcon from './assets/images/down-arrow.png';
 
 export default class PostHeader extends React.Component {
+
+	constructor(props){
+		super(props);
+		this.id = props.id || 'default';
+	}
+
+	componentWillMount(){
+		this.store = this.context.store;
+		this.store.subscribe(() => this.forceUpdate());
+	}
+
+	componentWillUnmount(){
+		this.store.unsubscribe();
+	}
+
 	render(){
+
+		const post = this.store.getState().posts.find(post => post.id === this.id);
+
 		return (
 		<div>
 			<div style={stylesheet.headerContainer} id="headerContainer">
@@ -18,11 +36,11 @@ export default class PostHeader extends React.Component {
 						</div>
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
-								<p style={stylesheet.title} >The Verge</p>
+								<p style={stylesheet.title} >{post.title}</p>
 								<img onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
-								<p style={stylesheet.titleTime} id="titleTime">13 hrs</p>
+								<p style={stylesheet.titleTime} id="titleTime">{post.timePosted}</p>
 								&nbsp;<p style={stylesheet.titleDot}>.</p>
 								&nbsp;<img style={stylesheet.globeIcon} src={globeIcon} id="globeIcon" />
 							</div>
@@ -30,7 +48,7 @@ export default class PostHeader extends React.Component {
 					</div>					
 				</div>
 				<div style={stylesheet.postHeadingContainer} id="postHeadingContainer">
-						<p style={stylesheet.postHeading} id="postHeading">Jar Jar is marked for death</p>
+						<p style={stylesheet.postHeading} id="postHeading">{post.subtitle}</p>
 				</div>				
 		</div>
 		);
@@ -40,6 +58,10 @@ export default class PostHeader extends React.Component {
 		console.log('this options needed!');
 	}
 }
+
+PostHeader.contextTypes = {
+	store: React.PropTypes.object
+};
 
 const stylesheet = {
 	iconContainer: {

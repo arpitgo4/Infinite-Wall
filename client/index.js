@@ -10,6 +10,8 @@ import { reducers } from './reducers';
 
 const store = createStore(reducers);
 
+console.log('booting....', store.getState());
+
 const app = (
   <AppContainer>
     <Provider store={store}>
