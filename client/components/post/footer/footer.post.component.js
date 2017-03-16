@@ -42,15 +42,15 @@ export default class PostFooter extends React.Component {
 	}
 
 	likeClicked() {
-		this.store.dispatch({type: 'LIKE'});
+		this.store.dispatch({ type: 'POST_LIKED', id: 'default' });
 	}
 
 	commentClicked() {
-		console.log('comment clicked!');
+		this.store.dispatch({ type: 'COMMENT_CLICKED', id: 'default' });
 	}
 
 	shareClicked() {
-		console.log('share clicked!');
+		this.store.dispatch({ type: 'SHARE_CLICKED', id: 'default' });
 	}
 }
 
