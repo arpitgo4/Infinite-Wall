@@ -9,8 +9,6 @@ import App from './components/app/app.component';
 import { reducers } from './reducers';
 
 const store = createStore(reducers);
-console.log('store --> ', store);
-store.dispatch({type: 'LIKE'});
 
 const app = (
   <AppContainer>
@@ -19,6 +17,7 @@ const app = (
     </Provider>
   </AppContainer>
 );
+
 
 ReactDOM.render(
   app, 

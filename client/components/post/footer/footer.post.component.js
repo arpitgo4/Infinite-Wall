@@ -12,15 +12,21 @@ import commentIcon from './assets/images/comment-bubble.png';
 
 export default class PostFooter extends React.Component {
 
+	constructor(){
+		super();
+
+	}
+
 	render(){
+		this.store = this.context.store;
 		return (
 			<div style={stylesheet.footerContainer}>
 					<div className="footerLinks">
-						<p onClick={this.likeClicked} >Like</p>
+						<p onClick={() => this.likeClicked()} >Like</p>
 						<p className="dot">.</p>
-						<p onClick={this.commentClicked} >Comment</p>
+						<p onClick={() => this.commentClicked()} >Comment</p>
 						<p className="dot">.</p>
-						<p onClick={this.shareClicked} >Share</p>
+						<p onClick={() => this.shareClicked()} >Share</p>
 						<p className='dot'>.</p>
 						<div className="footerStats">
 							<img src={likeIcon} />							
@@ -36,7 +42,7 @@ export default class PostFooter extends React.Component {
 	}
 
 	likeClicked() {
-		console.log('like clicked!');
+		this.store.dispatch({type: 'LIKE'});
 	}
 
 	commentClicked() {
@@ -47,6 +53,10 @@ export default class PostFooter extends React.Component {
 		console.log('share clicked!');
 	}
 }
+
+PostFooter.contextTypes = {
+	store: React.PropTypes.object
+};
 
 const stylesheet = {
 	footerContainer: {
