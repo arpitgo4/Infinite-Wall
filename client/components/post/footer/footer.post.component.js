@@ -12,9 +12,9 @@ import commentIcon from './assets/images/comment-bubble.png';
 
 export default class PostFooter extends React.Component {
 
-	constructor(){
-		super();
-		this.id = 'default';
+	constructor(props){
+		super(props);
+		this.id = props.id || 'default';
 	}
 
 	componentWillMount(){
@@ -29,7 +29,6 @@ export default class PostFooter extends React.Component {
 	}
 
 	render(){
-		console.log('redux store', this.store);
 		const post = this.store.getState().posts.find(post => post.id === this.id);
 		
 		return (	
