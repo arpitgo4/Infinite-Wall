@@ -32,10 +32,12 @@
     "style-loader": "^0.13.2",
     "superagent": "^3.5.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+	
+	"babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "webpack-dev-server": "^2.4.1"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "webpack-dev-server": "^2.4.1"
+    
   }
 }
