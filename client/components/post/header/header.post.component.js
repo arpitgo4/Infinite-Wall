@@ -37,12 +37,14 @@ export default class PostHeader extends React.Component {
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
 								<p style={stylesheet.title} >{post.title}</p>
-								<div className="dropdown">
+
+								<div className="dropdown" style={stylesheet.optionsIcon}>
 									<img className="dropdown-toggle" data-toggle="dropdown" 
-										onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
-									<ul className="dropdown-menu">
-										<li>Report this post</li>
-										<li>Loren Ipsum</li>
+										onClick={this.optionsClicked}  src={downArrowIcon} />
+									<ul className="dropdown-menu dropdown-menu-right">
+										<li><a href="javascript:void(0)">Report this post</a></li>
+										<li className="divider" />
+										<li><a href="javascript:void(0)">Loren Ipsum</a></li>
 									</ul>
 								</div>
 							</div>
@@ -99,8 +101,7 @@ const stylesheet = {
 	},
 	optionsIcon: {
 		float: 'right',
-		position: 'absolute',
-		right: 65
+		left: 480
 	},
 	titleContainer: {
 	},
