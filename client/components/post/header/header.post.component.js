@@ -37,7 +37,14 @@ export default class PostHeader extends React.Component {
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
 								<p style={stylesheet.title} >{post.title}</p>
-								<img onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
+								<div className="dropdown">
+									<img className="dropdown-toggle" data-toggle="dropdown" 
+										onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
+									<ul className="dropdown-menu">
+										<li>Report this post</li>
+										<li>Loren Ipsum</li>
+									</ul>
+								</div>
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
 								<p style={stylesheet.titleTime} id="titleTime">{post.timePosted}</p>
