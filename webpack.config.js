@@ -46,7 +46,7 @@ const config = {
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
-		port: 3000,
+		port: 8080,
 		hot: true
 	}
 };
