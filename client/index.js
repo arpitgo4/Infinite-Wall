@@ -9,8 +9,8 @@ import App from './components/app/app.component';
 import { reducers } from './reducers';
 
 const store = createStore(reducers);
-console.log('store --> ', store);
-store.dispatch({type: 'LIKE'});
+
+console.log('booting....', store.getState());
 
 const Wall = () => (
   <AppContainer>
@@ -19,6 +19,7 @@ const Wall = () => (
     </Provider>
   </AppContainer>
 );
+
 
 ReactDOM.render(
   <Wall />,

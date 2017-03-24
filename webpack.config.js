@@ -22,9 +22,13 @@ const config = {
 	module: {
 		loaders: [
 			{ test: /\.js?/, include: CLIENT_BASE_DIR, loaders: ['react-hot-loader/webpack', 'babel-loader'] },
-			{ test: /\.html?/, include: CLIENT_BASE_DIR, loaders: ['html-loader'] },
+			{ test: /\.html?/, include: CLIENT_BASE_DIR, loaders: ['react-hot-loader/webpack', 'html-loader'] },
 			{ test: /\.png$/, include: CLIENT_BASE_DIR, loader: 'file-loader?name=/images/[name].[ext]' },
-			{ test: /\.css$/, include: CLIENT_BASE_DIR, loader: "style-loader!css-loader" }
+			{ test: /\.css$/, loaders: [ 'react-hot-loader/webpack',  "style-loader" , "css-loader" ] },
+			{ test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=/fonts/[name].[ext]&limit=10000&mimetype=application/font-woff' }, //
+      		{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=/fonts/[name].[ext]&limit=10000&mimetype=application/octet-stream' },
+      		{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=/fonts/[name].[ext]' }, //
+      		{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=/fonts/[name].[ext]&limit=10000&mimetype=image/svg+xml'}//
 		] 
 	},
 	plugins: [
@@ -32,7 +36,12 @@ const config = {
 			inject: true,
 			template: path.resolve(CLIENT_BASE_DIR, 'index.html')
 		}),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.ProvidePlugin({
+	      $: 'jquery',
+	      jQuery: 'jquery',
+	      'window.jQuery': 'jquery'
+	    })
 	],
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
