@@ -93,7 +93,7 @@ class Header extends React.Component {
 	}
 
 	messageBoxClicked(){
-		console.log();
+		console.log('trying to enter message!!');
 	}
 }
 
