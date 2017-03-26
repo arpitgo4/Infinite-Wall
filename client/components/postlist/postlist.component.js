@@ -4,10 +4,6 @@ import Post from '../post/post.component';
 
 export default class PostList extends React.Component {
 
-	constructor(props){
-		super(props);
-	}
-
 	componentWillMount(){
 		this.store = this.context.store;
 		this.store.subscribe(() => this.forceUpdate());
@@ -25,7 +21,7 @@ export default class PostList extends React.Component {
 	}
 
 	componentWillUnmount() {
-		//this.store.unsubscribe();
+		this.store.unsubscribe();
 	}
 
 }

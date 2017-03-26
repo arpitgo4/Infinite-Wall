@@ -8,11 +8,6 @@ import PostFooter from './footer/footer.post.component';
 
 export default class Post extends React.Component {
 
-	constructor(props){
-		super(props);
-		console.log('post recevied', props.post);
-	}
-
 	render() {
 
 		const { id, title, timePosted, subtitle,
