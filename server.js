@@ -9,7 +9,7 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(8080, function(err) {
+app.listen(process.env.$PORT || 8080, function(err) {
   if (err) {
     return console.error(err);
   }
