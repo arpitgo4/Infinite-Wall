@@ -37,7 +37,15 @@ export default class PostHeader extends React.Component {
 						<div style={stylesheet.headerInfoContainer}>
 							<div style={stylesheet.titleContainer} id="titleContainer">
 								<p style={stylesheet.title} >{post.title}</p>
-								<img onClick={this.optionsClicked} style={stylesheet.optionsIcon} src={downArrowIcon} />
+
+								<div className="dropdown" style={stylesheet.optionsIcon}>
+									<img className="dropdown-toggle" data-toggle="dropdown" 
+										onClick={this.optionsClicked}  src={downArrowIcon} />
+									<ul className="dropdown-menu dropdown-menu-right">
+										<li><a href="javascript:void(0)">Report this post</a></li>										
+										<li><a href="javascript:void(0)">Contact Us</a></li>
+									</ul>
+								</div>
 							</div>
 							<div style={stylesheet.titleInfoContainer} id="titleInfoContainer">
 								<p style={stylesheet.titleTime} id="titleTime">{post.timePosted}</p>
@@ -68,8 +76,8 @@ const stylesheet = {
 		border: `1px solid ${colors.background}`,
 		height: 60,
 		width: 60,
-		paddingTop: 10,
-		paddingLeft: 10,
+		paddingTop: 5,
+		paddingLeft: 5,
 		display: 'inline-block'
 	},
 	headerInfoContainer: {
@@ -78,8 +86,7 @@ const stylesheet = {
 	},
 	titleIcon: {
 		height: 50,
-		width: 50,
-		align: 'center'
+		width: 50
 	},
 	headerContainer: {
 		padding: '20px 20px 20px 20px'
@@ -92,8 +99,7 @@ const stylesheet = {
 	},
 	optionsIcon: {
 		float: 'right',
-		position: 'absolute',
-		right: 65
+		left: 703
 	},
 	titleContainer: {
 	},

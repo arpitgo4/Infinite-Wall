@@ -12,7 +12,7 @@ const store = createStore(reducers);
 
 console.log('booting....', store.getState());
 
-const app = (
+const Wall = () => (
   <AppContainer>
     <Provider store={store}>
       <App />
@@ -22,7 +22,7 @@ const app = (
 
 
 ReactDOM.render(
-  app, 
+  <Wall />,
 	document.getElementById('react-app')
 );
 
@@ -30,7 +30,7 @@ if (module.hot) {
    module.hot.accept('./components/app/app.component.js', () => {
      const App = require('./components/app/app.component.js').default;
      ReactDOM.render(
-     	app, 
+     	<Wall />, 
      	document.getElementById('react-app')
      );
    });

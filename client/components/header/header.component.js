@@ -77,7 +77,7 @@ class Header extends React.Component {
 					<div style={Object.assign(verticalSeperator, {marginRight: 10})} />
 					<div style={Object.assign(headers)}>
 						<img style={iconStyle} src={imageIcon} />
-						<a href="#" style={headers.addPhotos}>Add Photos/Video</a>
+						<a href="#" style={headers.addPhotos} onClick={() => this.postStatus()}>Add Photos/Video</a>
 					</div>
 				</div>
 				<hr style={horizontalSeperator}></hr>
@@ -88,8 +88,12 @@ class Header extends React.Component {
 		);
 	}
 
+	postStatus() {
+		
+	}
+
 	messageBoxClicked(){
-		console.log();
+		console.log('trying to enter message!!');
 	}
 }
 
