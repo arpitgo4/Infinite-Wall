@@ -14,5 +14,5 @@ app.listen(process.env.$PORT || 8080, function(err) {
     return console.error(err);
   }
 
-  console.log('Listening at http://localhost:8080/');
+  console.log('Listening at http://localhost:8080/', process.env.$PORT);
 });
