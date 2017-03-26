@@ -82,7 +82,7 @@ class Header extends React.Component {
 				</div>
 				<hr style={horizontalSeperator}></hr>
 				<div style={messageBox}>
-					<a data-toggle="collapse" href="#collapseForm">
+					<a data-toggle="collapse" data-target="#collapseForm" href="javascript:void(0)">
 						<input onClick={this.messageBoxClicked} className="messageInputBox" type="text" placeholder="What's on your mind?" ref="status" />
 					</a>
 					<div id="collapseForm" className="collapse">
