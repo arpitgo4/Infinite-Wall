@@ -16,14 +16,16 @@ export default class PostList extends React.Component {
 	render() {
 
 		const posts = this.store.getState().posts;
-
+		
 		return (
-			{posts.map(post => <Post value={post} />)}
+			<div>
+				{ posts.map(post => <Post post={post} />) }
+			</div>
 		);
 	}
 
 	componentWillUnmount() {
-		this.store.unsubscribe();
+		//this.store.unsubscribe();
 	}
 
 }

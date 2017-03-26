@@ -10,14 +10,20 @@ export default class Post extends React.Component {
 
 	constructor(props){
 		super(props);
+		console.log('post recevied', props.post);
 	}
 
 	render() {
+
+		const { id, title, timePosted, subtitle,
+				 image, summary, summaryTitle, source, 
+				 likes, comments, shares } = this.props.post;
+
 		return (
 			<div style={stylesheet.postContainer} id="postContainer">
-				<PostHeader />
-				<PostBody />
-				<PostFooter />
+				<PostHeader id={id} title={title} timePosted={timePosted} subtitle={subtitle} />
+				<PostBody image={image} summary={summary} summaryTitle={summaryTitle} source={source} />
+				<PostFooter likes={likes} comments={comments} shares={shares} />
 			</div>
 		);
 	}

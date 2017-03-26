@@ -123,7 +123,6 @@ class Header extends React.Component {
 	}
 
 	clearInputFields() {
-		this.refs.status.value = '';
 		for(let key in this.refs){		
 			if(this.refs[key].value)
 				this.refs[key].value = '';

@@ -12,25 +12,9 @@ import commentIcon from './assets/images/comment-bubble.png';
 
 export default class PostFooter extends React.Component {
 
-	constructor(props){
-		super(props);
-		this.id = props.id || 'default';
-	}
-
-	componentWillMount(){
-		this.store = this.context.store;
-		this.store.subscribe(() => {
-			this.forceUpdate();
-		});
-	}
-
-	componentWillUnmount(){
-		this.store.unsubscribe();
-	}
-
 	render(){
-		const post = this.store.getState().posts.find(post => post.id === this.id);
-		
+		const { likes, shares, comments } = this.props;
+
 		return (	
 			<div style={stylesheet.footerContainer}>
 					<div className="footerLinks">
@@ -42,11 +26,11 @@ export default class PostFooter extends React.Component {
 						<p className='dot'>.</p>
 						<div className="footerStats">
 							<img src={likeIcon} />							
-							<p>{post.likes}</p>
+							<p>{likes}</p>
 							<img src={commentIcon} />
-							<p>{post.comments}</p>
+							<p>{comments}</p>
 							<img src={shareIcon} />
-							<p>{post.shares}</p>
+							<p>{shares}</p>
 						</div>
 					</div>
 			</div>					

@@ -9,36 +9,22 @@ import css from './assets/css/style.css';
 
 export default class PostBody extends React.Component {
 
-	constructor(props){
-		super(props);
-		this.id = props.id || 'default';
-	}	
-
-	componentWillMount(){
-		this.store = this.context.store;
-		this.store.subscribe(() => this.forceUpdate());
-	}
-
-	componentWillUnmount(){
-		this.store.unsubscribe();
-	}
-
 	render(){
 
-		const post = this.store.getState().posts.find(post => post.id === this.id);
+		const { image, summary, summaryTitle, source } = this.props;
 
 		return (
 			<div style={stylesheet.postBodyContainer} id="postInfoContainer">
 					<div style={stylesheet.postInfoContainer} >
-						<div style={Object.assign(stylesheet.postImage, { backgroundImage: `url(${post.image})` })}></div>						
+						<div style={Object.assign(stylesheet.postImage, { backgroundImage: `url(${image})` })}></div>						
 						<div id="postMessageContainer" style={stylesheet.postMessageContainer} >
 							<p style={stylesheet.postMessageTitle}>
-								{post.summaryTitle}
+								{summaryTitle}
 							</p>
 							<p style={stylesheet.postMessageSummary}>
-								{post.summary}
+								{summary}
 							</p>
-							<p style={stylesheet.postSource}>{post.source}</p>
+							<p style={stylesheet.postSource}>{source}</p>
 						</div>
 					</div>
 				</div>

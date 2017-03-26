@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '../header/header.component';
 import Post from '../post/post.component';
+import PostList from '../postlist/postlist.component';
 
 import colors from '../colors.js';
 import fonts from '../fonts.js';
@@ -54,7 +55,7 @@ class App extends React.Component {
 						<Header />
 					</div>
 					<div style={postStyle}>
-						<Post />
+						<PostList />
 					</div>					
 				</div>				
 			</div>

@@ -40,7 +40,7 @@ const dummyPost = {
 			shares: 91
 		};
 
-superagent
+/*superagent
 	.get(`https://api.imgur.com/3/account/${config.account_username}/albums/0`)
 	.set('Authorization', `${config.token_type} ${config.access_token}`)
 	.end((err, res) => {
@@ -64,7 +64,7 @@ superagent
 				const posts = images.map(image => Object.assign(dummyPost, { image: image.link }));
 				console.log('posts', posts);
 			});
-	});
+	});*/
 
 const reducers = (state = defaultState, action) => {
 	let posts = null;
