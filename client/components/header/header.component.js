@@ -88,22 +88,22 @@ class Header extends React.Component {
 					<div id="collapseForm" className="collapse">
 						<div className="row">
 							<div className="inputBox">
-								<input type="text" placeholder="Title" className="messageInputBox" />
+								<input type="text" ref="title" placeholder="Title" className="messageInputBox" />
 							</div>
 							<div className="inputBox">
-								<input type="text" placeholder="Subtitle" className="messageInputBox" />
+								<input type="text" ref="subtitle" placeholder="Subtitle" className="messageInputBox" />
 							</div>
 							<div className="inputBox">
-								<input type="file" placeholder="image upload" ref="image"  className="messageInputBox" />
+								<input type="file" ref="image" placeholder="image upload" ref="image"  className="messageInputBox" />
 							</div>
 							<div className="inputBox">
-								<input type="text" placeholder="Description Title" className="messageInputBox" />
+								<input type="text" ref="descTitle" placeholder="Description Title" className="messageInputBox" />
 							</div>
 							<div className="inputBox">
-								<textarea type="textarea" placeholder="Description" className="messageInputBox" />
+								<textarea type="textarea" ref="desc" placeholder="Description" className="messageInputBox" />
 							</div>
 							<div className="inputBox">
-								<input type="text" placeholder="Source of this post" className="messageInputBox" />
+								<input type="text" ref="source" placeholder="Source of this post" className="messageInputBox" />
 							</div>
 							<div className="col-sm-2 col-sm-offset-11">
 								<a href="#collapseForm" data-toggle="collapse">
@@ -118,8 +118,16 @@ class Header extends React.Component {
 		);
 	}
 
-	postStatus() {
+	postStatus() {		
+		this.clearInputFields();
+	}
+
+	clearInputFields() {
 		this.refs.status.value = '';
+		for(let key in this.refs){		
+			if(this.refs[key].value)
+				this.refs[key].value = '';
+		}
 	}
 
 	messageBoxClicked(){
