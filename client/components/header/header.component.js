@@ -99,7 +99,7 @@ class Header extends React.Component {
 							<div className="inputBox">
 								<input type="text" ref="descTitle" placeholder="Description Title" className="messageInputBox" />
 							</div>
-							<div className="inputBox">
+							<div className="inputArea">
 								<textarea type="textarea" ref="desc" placeholder="Description" className="messageInputBox" />
 							</div>
 							<div className="inputBox">
@@ -131,7 +131,7 @@ class Header extends React.Component {
 	}
 
 	messageBoxClicked(){
-		console.log('trying to enter message!!');
+		
 	}
 }
 
