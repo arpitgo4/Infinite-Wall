@@ -107,6 +107,10 @@ const reducers = (state = defaultState, action) => {
 
 			return Object.assign(state, { posts });
 
+		case 'POST_STATUS': 
+			console.log('post in action', action.post);
+			return Object.assign(state, { posts: [ ...state.posts, action.post ] });
+
 		default: return state;
 	}
 };

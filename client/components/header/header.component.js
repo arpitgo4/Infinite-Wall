@@ -119,7 +119,24 @@ class Header extends React.Component {
 	}
 
 	postStatus() {		
-		this.clearInputFields();
+		//this.clearInputFields();
+		this.context.store.dispatch({ 
+			type: 'POST_STATUS', 
+			post: {
+				id: Math.random(),
+				title: this.refs.title.value,
+				timePosted: '13 hrs',
+				subtitle: this.refs.subtitle.value,
+				image: 'http://i.imgur.com/Y2Z10CZ.jpg',
+				summaryTitle: this.refs.descTitle.value,
+				summary: this.refs.desc.value,
+				source: this.refs.source.value,
+				likes: 0,
+				comments: 0,
+				shares: 0,
+				dateTime: new Date().toString()
+			} 
+		});
 	}
 
 	clearInputFields() {
@@ -133,5 +150,9 @@ class Header extends React.Component {
 		
 	}
 }
+
+Header.contextTypes = {
+	store: React.PropTypes.object
+};
 
 export default Header;
