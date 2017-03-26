@@ -9,14 +9,14 @@ import shareIcon from './assets/images/share.png';
 import likeIcon from './assets/images/like.png';
 import commentIcon from './assets/images/comment-bubble.png';
 
-const PostFooter = ({ likes, shares, comments }) => (
+const PostFooter = ({ likes, shares, comments, likeHandler, shareHandler, commentHandler }) => (
 	<div style={stylesheet.footerContainer}>
 					<div className="footerLinks">
-						<p onClick={() => this.likeClicked()} >Like</p>
+						<p onClick={likeHandler} >Like</p>
 						<p className="dot">.</p>
-						<p onClick={() => this.commentClicked()} >Comment</p>
+						<p onClick={commentHandler} >Comment</p>
 						<p className="dot">.</p>
-						<p onClick={() => this.shareClicked()} >Share</p>
+						<p onClick={shareHandler} >Share</p>
 						<p className='dot'>.</p>
 						<div className="footerStats">
 							<img src={likeIcon} />							
