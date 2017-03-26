@@ -72,12 +72,12 @@ class Header extends React.Component {
 				<div style={subContainer}>
 					<div style={Object.assign(headers)}>
 						<img style={iconStyle} src={pencilIcon} />
-						<a href="#" style={headers.updateStatus}>Update Status</a>
+						<a href="javascript:void(0)" style={headers.updateStatus}>Update Status</a>
 					</div>
 					<div style={Object.assign(verticalSeperator, {marginRight: 10})} />
 					<div style={Object.assign(headers)}>
 						<img style={iconStyle} src={imageIcon} />
-						<a href="#" style={headers.addPhotos} onClick={() => this.postStatus()}>Add Photos/Video</a>
+						<a href="javascript:void(0)" style={headers.addPhotos} onClick={() => this.postStatus()}>Add Photos/Video</a>
 					</div>
 				</div>
 				<hr style={horizontalSeperator}></hr>
@@ -123,7 +123,7 @@ class Header extends React.Component {
 		this.context.store.dispatch({ 
 			type: 'POST_STATUS', 
 			post: {
-				id: Math.random(),
+				id: Math.ceil(Math.random() * 10e6),
 				title: this.refs.title.value,
 				timePosted: '13 hrs',
 				subtitle: this.refs.subtitle.value,
