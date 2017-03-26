@@ -82,7 +82,7 @@ class Header extends React.Component {
 				</div>
 				<hr style={horizontalSeperator}></hr>
 				<div style={messageBox}>
-					<input onClick={this.messageBoxClicked} className="messageInputBox"  type="text" placeholder="What's on your mind?" ref="message" />
+					<input onClick={this.messageBoxClicked} className="messageInputBox"  type="text" placeholder="What's on your mind? Tell me :W" ref="message" />
 				</div>
 			</div>
 		);

@@ -20,7 +20,7 @@ const defaultState = {
 const reducers = (state = defaultState, action) => {
 	let posts = null;
 
-	console.log('state', state);	// console.log shows in memory representation of the state object, 
+	//console.log('state', state);	// console.log shows in memory representation of the state object, 
 									// so while it renders it on console, redux has already updated the 
 									// state variable with the next state.
 
