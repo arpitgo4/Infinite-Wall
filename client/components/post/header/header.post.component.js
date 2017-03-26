@@ -7,14 +7,8 @@ import titleIcon from './assets/images/title_icon.png';
 import globeIcon from './assets/images/earth-globe.png';
 import downArrowIcon from './assets/images/down-arrow.png';
 
-export default class PostHeader extends React.Component {
-
-	render(){
-
-		const { id, title, timePosted, subtitle } = this.props;
-
-		return (
-		<div>
+const PostHeader = ({ id, title, timePosted, subtitle }) => (
+	<div>
 			<div style={stylesheet.headerContainer} id="headerContainer">
 					<div id="header">
 						<div style={stylesheet.iconContainer} id="iconContainer">
@@ -26,7 +20,7 @@ export default class PostHeader extends React.Component {
 
 								<div className="dropdown" style={stylesheet.optionsIcon}>
 									<img className="dropdown-toggle" data-toggle="dropdown" 
-										onClick={this.optionsClicked}  src={downArrowIcon} />
+										  src={downArrowIcon} />
 									<ul className="dropdown-menu dropdown-menu-right">
 										<li><a href="javascript:void(0)">Report this post</a></li>										
 										<li><a href="javascript:void(0)">Contact Us</a></li>
@@ -45,17 +39,9 @@ export default class PostHeader extends React.Component {
 						<p style={stylesheet.postHeading} id="postHeading">{subtitle}</p>
 				</div>				
 		</div>
-		);
-	}
+);
 
-	optionsClicked(){
-		console.log('this options needed!');
-	}
-}
-
-PostHeader.contextTypes = {
-	store: React.PropTypes.object
-};
+export default PostHeader;
 
 const stylesheet = {
 	iconContainer: {

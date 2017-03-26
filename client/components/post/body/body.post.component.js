@@ -7,14 +7,8 @@ import postImage from './assets/images/post_image.png';
 
 import css from './assets/css/style.css';
 
-export default class PostBody extends React.Component {
-
-	render(){
-
-		const { image, summary, summaryTitle, source } = this.props;
-
-		return (
-			<div style={stylesheet.postBodyContainer} id="postInfoContainer">
+const PostBody = ({ image, summary, summaryTitle, source }) => (
+		<div style={stylesheet.postBodyContainer} id="postInfoContainer">
 					<div style={stylesheet.postInfoContainer} >
 						<div style={Object.assign(stylesheet.postImage, { backgroundImage: `url(${image})` })}></div>						
 						<div id="postMessageContainer" style={stylesheet.postMessageContainer} >
@@ -28,13 +22,9 @@ export default class PostBody extends React.Component {
 						</div>
 					</div>
 				</div>
-		);
-	}
-}
+);
 
-PostBody.contextTypes = {
-	store: React.PropTypes.object
-};
+export default PostBody;
 
 const stylesheet = {
 	postBodyContainer: {
