@@ -30,7 +30,8 @@ Post.contextTypes = {
 
 const stylesheet = {
 	postContainer: {
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		marginTop: 20
 	}
 };
 

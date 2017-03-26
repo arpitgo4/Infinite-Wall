@@ -39,7 +39,7 @@ class App extends React.Component {
 		};
 
 		const postStyle = {
-			paddingTop: '15px',
+			
 			paddingLeft: '20px',
 			paddingRight: '20px',
 			paddingBottom: '15px'
