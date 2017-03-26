@@ -12,3 +12,12 @@
 .messageInputBox:focus {
 	outline: 0px;   
 }
+
+.inputBox {
+	padding: 7px;
+	margin-left: 8px;
+}
+
+.inputBox:focus {
+	border-bottom: 1px solid grey;
+}

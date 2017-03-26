@@ -65,7 +65,7 @@ class Header extends React.Component {
 			fontSize: '1.3em',
 			height: 40,
 			width: '100%'
-		}
+		};
 
 		return (
 			<div style={container}>
@@ -82,14 +82,44 @@ class Header extends React.Component {
 				</div>
 				<hr style={horizontalSeperator}></hr>
 				<div style={messageBox}>
-					<input onClick={this.messageBoxClicked} className="messageInputBox"  type="text" placeholder="What's on your mind? Tell me :W" ref="message" />
+					<a data-toggle="collapse" href="#collapseForm">
+						<input onClick={this.messageBoxClicked} className="messageInputBox" type="text" placeholder="What's on your mind?" ref="status" />
+					</a>
+					<div id="collapseForm" className="collapse">
+						<div className="row">
+							<div className="inputBox">
+								<input type="text" placeholder="Title" className="messageInputBox" />
+							</div>
+							<div className="inputBox">
+								<input type="text" placeholder="Subtitle" className="messageInputBox" />
+							</div>
+							<div className="inputBox">
+								<input type="file" placeholder="image upload" ref="image"  className="messageInputBox" />
+							</div>
+							<div className="inputBox">
+								<input type="text" placeholder="Description Title" className="messageInputBox" />
+							</div>
+							<div className="inputBox">
+								<textarea type="textarea" placeholder="Description" className="messageInputBox" />
+							</div>
+							<div className="inputBox">
+								<input type="text" placeholder="Source of this post" className="messageInputBox" />
+							</div>
+							<div className="col-sm-2 col-sm-offset-11">
+								<a href="#collapseForm" data-toggle="collapse">
+									<button className="btn btn-primary btn-sm"
+										onClick={this.postStatus.bind(this)}>Post</button>
+								</a>	
+							</div>
+						</div>						
+					</div>
 				</div>
 			</div>
 		);
 	}
 
 	postStatus() {
-		
+		this.refs.status.value = '';
 	}
 
 	messageBoxClicked(){
