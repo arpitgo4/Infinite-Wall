@@ -10,8 +10,6 @@ import { reducers } from './reducers';
 
 const store = createStore(reducers);
 
-console.log('booting....', store.getState());
-
 const Wall = () => (
   <AppContainer>
     <Provider store={store}>
