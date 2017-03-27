@@ -2,7 +2,6 @@
 import React from 'react';
 
 import colors from '../../colors.js';
-import './assets/css/style.css';
 
 import titleIcon from './assets/images/title_icon.png';
 import globeIcon from './assets/images/earth-globe.png';
