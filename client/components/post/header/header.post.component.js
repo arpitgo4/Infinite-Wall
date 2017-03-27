@@ -2,6 +2,7 @@
 import React from 'react';
 
 import colors from '../../colors.js';
+import './assets/css/style.css';
 
 import titleIcon from './assets/images/title_icon.png';
 import globeIcon from './assets/images/earth-globe.png';
@@ -20,7 +21,7 @@ const PostHeader = ({ id, title, timePosted, subtitle }) => (
 
 								<div className="dropdown" style={stylesheet.optionsIcon}>
 									<img className="dropdown-toggle" data-toggle="dropdown" 
-										  src={downArrowIcon} />
+										  id="optionsIcon" src={downArrowIcon} />
 									<ul className="dropdown-menu dropdown-menu-right">
 										<li><a href="javascript:void(0)">Report this post</a></li>										
 										<li><a href="javascript:void(0)">Contact Us</a></li>
