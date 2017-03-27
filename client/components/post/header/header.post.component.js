@@ -70,8 +70,8 @@ const stylesheet = {
 		fontSize: '1.5em'
 	},
 	optionsIcon: {
-		float: 'right',
-		left: 703
+		float: 'right'
+		/*left: 703*/
 	},
 	titleContainer: {
 	},
